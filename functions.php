@@ -15,4 +15,10 @@
     ) );
   }
 
+  // Queue theme styles and scripts
+  add_action( 'wp_enqueue_scripts', 'riada_theme_scripts' );
+  function riada_theme_scripts() {
+    wp_enqueue_style( 'main_css', get_stylesheet_uri() );
+  }
+
 ?>
