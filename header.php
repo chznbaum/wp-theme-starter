@@ -1,3 +1,7 @@
+<?php
+/*
+ * The header for the theme */
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
   <head>

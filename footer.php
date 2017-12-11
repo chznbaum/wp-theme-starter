@@ -1,3 +1,7 @@
+<?php
+/*
+ * The template for displaying the footer */
+?>
     <footer>
       <nav>
         <?php wp_nav_menu( array( 'theme_location' => 'footer_menu', 'menu_class' => 'menu menu--footer-menu' ) ); ?>

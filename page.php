@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+/*
+ * The template for displaying pages */
+get_header(); ?>
 
 <main>
 

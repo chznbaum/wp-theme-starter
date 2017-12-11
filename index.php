@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+/*
+ * The main template file */
+get_header(); ?>
 
   <main>
 
