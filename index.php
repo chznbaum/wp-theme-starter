@@ -1,25 +1,22 @@
 <?php get_header(); ?>
-    <main>
 
-      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+  <main>
 
-        <h2>
-          <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-        </h2>
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-        <?php the_content(); ?>
-        
-      <?php endwhile; else : ?>
+      <h2>
+        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+      </h2>
 
-        <h2><?php _e( 'Nothing to See Here', 'riada' ); ?></h2>
-        <p><?php _e( 'There doesn\'t seem to be any posts here.', 'riada' ); ?></p>
+      <?php the_content(); ?>
+      
+    <?php endwhile; else : ?>
 
-      <?php endif; ?>
+      <h2><?php _e( 'Nothing to See Here', 'riada' ); ?></h2>
+      <p><?php _e( 'There doesn\'t seem to be any posts here.', 'riada' ); ?></p>
 
-    </main>
+    <?php endif; ?>
 
-    <!-- build:js ./assets/js/app.js -->
-    <script src="/temp/js/app.js"></script>
-    <!-- endbuild -->
-  </body>
-</html>
+  </main>
+
+<?php get_footer(); ?>
