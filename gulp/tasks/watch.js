@@ -18,6 +18,6 @@ gulp.task('watch', function() {
 });
 
 gulp.task('cssInject', ['styles'], function() {
-  return gulp.src('./app/temp/css/style.css')
+  return gulp.src('./style.css')
     .pipe(browserSync.stream());
 });
