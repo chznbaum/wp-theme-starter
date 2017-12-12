@@ -17,13 +17,13 @@
     if ( 'post' === get_post_type() ) : ?>
       <div class="post__meta">
         <?php
-        echo riada_time_link();
-        riada_edit_link();
+        echo wp_theme_starter_time_link();
+        wp_theme_starter_edit_link();
         ?>
       </div><!-- .post__meta -->
     <?php elseif ( 'page'  === get_post_type() && get_edit_post_link() ) : ?>
       <div class="post__meta">
-        <?php riada_edit_link(); ?>
+        <?php wp_theme_starter_edit_link(); ?>
       </div><!-- .post_meta -->
     <?php endif; ?>
   </header><!-- .post__header -->

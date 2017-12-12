@@ -6,9 +6,9 @@ get_header(); ?>
 <main>
 
   <?php if ( have_posts() ) : ?>
-    <h1><?php printf( __( 'Search Results for: %s', 'riada' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+    <h1><?php printf( __( 'Search Results for: %s', 'wp-theme-starter' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
   <?php else : ?>
-    <h1><?php _e( 'Nothing Found', 'riada' ) ?></h1>
+    <h1><?php _e( 'Nothing Found', 'wp-theme-starter' ) ?></h1>
   <?php endif; ?>
 
   <?php
@@ -23,7 +23,7 @@ get_header(); ?>
 
     else: ?>
 
-      <p><?php _e( 'Sorry, but nothing matched your search.', 'riada' ); ?></p>
+      <p><?php _e( 'Sorry, but nothing matched your search.', 'wp-theme-starter' ); ?></p>
       <?php get_search_form();
 
   endif;

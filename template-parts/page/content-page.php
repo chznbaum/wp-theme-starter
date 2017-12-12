@@ -7,7 +7,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header>
     <?php the_title( '<h1>', '</h1>' ); ?>
-    <?php riada_edit_link(); ?>
+    <?php wp_theme_starter_edit_link(); ?>
   </header>
   <div>
     <?php

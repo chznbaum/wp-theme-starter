@@ -18,7 +18,7 @@ get_header(); ?>
 
   <p><?php echo $current_author->user_description; ?></p>
 
-  <h2><?php _e( 'Posts by ', 'riada' ); echo $current_author->display_name; ?></h2>
+  <h2><?php _e( 'Posts by ', 'wp-theme-starter' ); echo $current_author->display_name; ?></h2>
 
   <?php if ( have_posts() ) :
     while ( have_posts() ) : the_post();

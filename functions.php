@@ -13,55 +13,55 @@
   add_theme_support( 'post-thumbnails' );
 
   // Remove hardcoded width & height attributes from featured images
-  add_filter( 'post_thumbnail_html', 'riada_remove_img_attributes' );
-  function riada_remove_img_attributes( $html ) {
+  add_filter( 'post_thumbnail_html', 'wp_theme_starter_remove_img_attributes' );
+  function wp_theme_starter_remove_img_attributes( $html ) {
     return preg_replace( '/(width|height)="\d+"\s/', '', $html );
   }
 
   // Register menus
-  add_action( 'after_setup_theme', 'riada_register_menus' );
-  function riada_register_menus() {
+  add_action( 'after_setup_theme', 'wp_theme-_starter_register_menus' );
+  function wp_theme_starter_register_menus() {
     register_nav_menus( array(
-      'primary_menu' => __( 'Primary Menu', 'riada' ),
+      'primary_menu' => __( 'Primary Menu', 'wp-theme-starter' ),
     ) );
   }
 
   // Queue theme styles and scripts
-  add_action( 'wp_enqueue_scripts', 'riada_theme_scripts' );
-  function riada_theme_scripts() {
+  add_action( 'wp_enqueue_scripts', 'wp_theme_starter_theme_scripts' );
+  function wp_theme_starter_theme_scripts() {
     wp_enqueue_style( 'main_css', get_stylesheet_uri() );
   }
 
   // Register widget area
 
-  add_action( 'widgets_init', 'riada_widgets_init' );
-  function riada_widgets_init() {
+  add_action( 'widgets_init', 'wp_theme_starter_widgets_init' );
+  function wp_theme_starter_widgets_init() {
     register_sidebar( array(
-      'name' => __( 'Blog Sidebar', 'riada' ),
+      'name' => __( 'Blog Sidebar', 'wp-theme-starter' ),
       'id' => 'sidebar-1',
       'description' => __( 'Add widgets here to appear on blog posts and archive pages.' ),
     ) );
 
     register_sidebar( array(
-      'name' => __( 'Footer 1', 'riada' ),
+      'name' => __( 'Footer 1', 'wp-theme-starter' ),
       'id' => 'sidebar-2',
       'description' => __( 'Add widgets here to appear in your footer.' ),
     ) );
 
     register_sidebar( array(
-      'name' => __( 'Footer 2', 'riada' ),
+      'name' => __( 'Footer 2', 'wp-theme-starter' ),
       'id' => 'sidebar-3',
       'description' => __( 'Add widgets here to appear in your footer.' ),
     ) );
 
     register_sidebar( array(
-      'name' => __( 'Footer 3', 'riada' ),
+      'name' => __( 'Footer 3', 'wp-theme-starter' ),
       'id' => 'sidebar-4',
       'description' => __( 'Add widgets here to appear in your footer.' ),
     ) );
 
     register_sidebar( array(
-      'name' => __( 'Footer 4', 'riada' ),
+      'name' => __( 'Footer 4', 'wp-theme-starter' ),
       'id' => 'sidebar-5',
       'description' => __( 'Add widgets here to appear in your footer.' ),
     ) );

@@ -19,10 +19,10 @@
     if ( 'post' === get_post_type() ) {
       echo '<div class="post__meta">';
       if ( is_single() ) {
-        riada_posted_on();
+        wp_theme_starter_posted_on();
       } else {
-        echo riada_time_link();
-        riada_edit_link();
+        echo wp_theme_starter_time_link();
+        wp_theme_starter_edit_link();
       };
       echo '</div><!-- .post__meta -->';
     };
@@ -41,7 +41,7 @@
     <?php
     /* translators: %s: Name of current post */
       the_content( sprintf(
-        __( 'Continue reading<span class="screen-reader__text"> "%s"</span>', 'riada' ),
+        __( 'Continue reading<span class="screen-reader__text"> "%s"</span>', 'wp-theme-starter' ),
         get_the_title()
       ) );
 

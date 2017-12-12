@@ -5,7 +5,7 @@ get_header(); ?>
 
 <main>
 
-  <h1><?php _e( 'Category: ', 'riada' ); single_cat_title(); ?></h1>
+  <h1><?php _e( 'Category: ', 'wp-theme-starter' ); single_cat_title(); ?></h1>
 
   <?php if ( have_posts() ) :
     while ( have_posts() ) : the_post();
