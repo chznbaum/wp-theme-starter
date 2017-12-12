@@ -5,20 +5,10 @@ get_header(); ?>
 
 <main>
 
-  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+  <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-      <h1><?php the_title(); ?></h1>
-      <div>
-        <?php the_author_posts_link(); ?>
-        <?php the_time( 'F j, Y' ); ?>
-        <?php the_category(); ?>
-        <?php the_tags(); ?>
-      </div>
-      <div>
-        <?php the_content(); ?>
-      </div>
-    </article>
+    get_template_part( 'template-parts/post/content', get_post_format() ); ?>
+
     <div>
       <?php previous_post_link(); ?>
       <a href="<?php bloginfo(url); ?>">Back to Blog</a>

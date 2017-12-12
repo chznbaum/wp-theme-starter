@@ -8,23 +8,19 @@ get_header(); ?>
   <h1><?php _e( 'Category: ', 'riada' ); single_cat_title(); ?></h1>
 
   <?php if ( have_posts() ) :
-    while ( have_posts() ) : the_post(); ?>
+    while ( have_posts() ) : the_post();
 
-    <h2>
-      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-    </h2>
-
-    <?php the_excerpt();
+      get_template_part( 'template-parts/post/content', 'excerpt' );
       
     endwhile;
 
     the_posts_pagination();
 
-  else : ?>
+  else :
 
-    <p><?php _e( 'There doesn\'t seem to be any posts in this category.', 'riada' ); ?></p>
+    get_template_part( 'template-parts/post/content', 'none' );
 
-  <?php endif; ?>
+  endif; ?>
 
 </main>
 
