@@ -20,29 +20,23 @@ get_header(); ?>
 
   <h2><?php _e( 'Posts by ', 'riada' ); echo $current_author->display_name; ?></h2>
 
-  <ul>
-    <?php if ( have_posts() ) :
-      while ( have_posts() ) : the_post(); ?>
+  <?php if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
 
-      <li>
-        <a href="<?php the_permalink(); ?>">
-          <?php the_title(); ?>
-        </a>
-        <?php the_time( 'F j, Y' ); ?> in <?php the_category(', '); ?>
-      </li>
-        <?php
+      get_template_part( 'template-parts/post/content', 'excerpt' );
         
-      endwhile;
+    endwhile;
 
-      the_posts_pagination();
+    the_posts_pagination();
 
-    else : ?>
+  else :
 
-      <p><?php _e( 'No posts by this author.', 'riada' ); ?></p>
+    get_template_part( 'template-parts/post/content', 'none' );
 
-    <?php endif; ?>
-  </ul>
+  endif; ?>
 
 </main>
+
+<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

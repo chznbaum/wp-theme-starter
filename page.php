@@ -5,20 +5,16 @@ get_header(); ?>
 
 <main>
 
-  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+  <?php
+  while ( have_posts() ) : the_post();
 
-    <h1><?php the_title(); ?></h1>
-
-    <?php the_content(); ?>
-
-    <?php comments_template(); ?>
+    get_template_part( 'template-parts/page/content', 'page' );
+    
+    if ( comments_open() || get_comments_number() ) :
+      comments_template();
+    endif;
       
-  <?php endwhile; else : ?>
-
-    <h1><?php _e( 'Nothing to See Here', 'riada' ); ?></h1>
-    <p><?php _e( 'There doesn\'t seem to be any content here.', 'riada' ); ?></p>
-
-  <?php endif; ?>
+  endwhile; ?>
 
 </main>
 

@@ -13,14 +13,11 @@ get_header(); ?>
 
   <?php
     if ( have_posts() ) :
-      while ( have_posts() ) : the_post(); ?>
+      while ( have_posts() ) : the_post();
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          <h2><?php the_title(); ?></h1>
-          <?php the_excerpt(); ?>
-        </article>
+        get_template_part( 'template-parts/post/content', 'excerpt' );
 
-      <?php endwhile;
+      endwhile;
 
       the_posts_pagination();
 
@@ -33,5 +30,7 @@ get_header(); ?>
   ?>
 
 </main>
+
+<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
