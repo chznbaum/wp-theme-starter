@@ -29,6 +29,14 @@
     ?>
   </header><!-- .post__header -->
 
+  <?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
+    <div class="post__thumbnail">
+      <a href="<?php the_permalink(); ?>">
+        <?php the_post_thumbnail(); ?>
+      </a>
+    </div>
+  <?php endif; ?>
+
   <div class="post__content">
     <?php
     /* translators: %s: Name of current post */

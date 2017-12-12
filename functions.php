@@ -9,6 +9,15 @@
   // Supports HTML5 theme markup
   add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 
+  // Support featured images
+  add_theme_support( 'post-thumbnails' );
+
+  // Remove hardcoded width & height attributes from featured images
+  add_filter( 'post_thumbnail_html', 'riada_remove_img_attributes' );
+  function riada_remove_img_attributes( $html ) {
+    return preg_replace( '/(width|height)="\d+"\s/', '', $html );
+  }
+
   // Register menus
   add_action( 'after_setup_theme', 'riada_register_menus' );
   function riada_register_menus() {
