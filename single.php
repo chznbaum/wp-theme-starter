@@ -10,7 +10,7 @@ get_header(); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <h1><?php the_title(); ?></h1>
       <div>
-        <?php the_author(); ?>
+        <?php the_author_posts_link(); ?>
         <?php the_time( 'F j, Y' ); ?>
         <?php the_category(); ?>
         <?php the_tags(); ?>
