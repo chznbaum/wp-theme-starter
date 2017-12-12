@@ -1,6 +1,6 @@
 <?php
 /*
- * The main template file */
+ * The template for displaying blog posts */
 get_header(); ?>
 
 <main>
