@@ -5,8 +5,7 @@ get_header(); ?>
 
 <main>
 
-  <?php the_post(); ?>
-  <h1><?php the_title(); ?></h1>
+  <h1><?php _e( 'Archive', 'riada' ); ?></h1>
 
   <?php get_search_form(); ?>
 
